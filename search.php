@@ -8,12 +8,18 @@ $filter_names = array(
 $client = new \AlgoliaSearch\Client("WKDDRK70D7", "71d5ed293564487794308eb423204d14");
 
 $index = $client->initIndex('test');
-//$res = $index->search('山茶奎', [
-//        'attributesToRetrieve' => 'name,photo,count',
+$res = $index->search($_POST['keyword'], array(
+    'attributesToRetrieve' => 'name,photo,count,price,time'
+));
 //      //  'typoTolerance' => 'min',
 //      //  'minWordSizefor2Typos' => 20,
 ////        'queryType' => 'prefixAll' //prefixLast//prefixNone//prefixAll
 //    ]
-//);
-$res = $index->searchForFacetValues("name", "山茶保濕CHANEL");
-var_dump($res);
+//res = $index->searchForFacetValues("name", "山茶保濕CHANEL");
+if (empty($res['hits'])) {
+    echo 'no';
+    exit;
+}
+
+echo json_encode($res['hits']);
+exit;
