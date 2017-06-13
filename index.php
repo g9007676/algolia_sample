@@ -38,15 +38,11 @@ $( document ).ready(function() {
                 var cell1 = _row.insertCell(0);
                 var cell2 = _row.insertCell(1);
                 var cell3 = _row.insertCell(2);
-                var cell4 = _row.insertCell(3);
-                var cell5 = _row.insertCell(4);
 
 
-                cell1.appendChild(addSpan(this.name));
-                cell2.appendChild(addImg(this.photo));
-                cell3.appendChild(addSpan(this.time));
-                cell4.appendChild(addSpan(this.count));
-                cell5.appendChild(addSpan(this.price));
+                cell1.appendChild(addSpan(this.objectID));
+                cell2.appendChild(addSpan(this.name));
+                cell3.appendChild(addSpan(this.keyword));
             });
 //            var _table = document.getElementById("preTable").tBodies[0];
         });
@@ -77,7 +73,7 @@ $( document ).ready(function() {
                 <div class="input-group">
                     <input class="form-control" id="system-search" name="keyword" placeholder="Search for" required="">
                     <span class="input-group-btn">
-                        <button type="button" id="searchbtn"class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                        <button type="button" id="searchbtn"class="btn btn-default"><i class="glyphicon glyphicon-search"></i>~拜託點擊我~</button>
                     </span>
                 </div>
             </form>
@@ -86,11 +82,9 @@ $( document ).ready(function() {
             <table class="table table-list-search" id="preTable">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>name</th>
-                        <th>photo</th>
-                        <th>time</th>
-                        <th>count</th>
-                        <th>price</th>
+                        <th>keyword</th>
                     </tr>
                 </thead>
                 <tbody>
